@@ -1,0 +1,19 @@
+@mixin w-h($width,$height,$bgc: #fff){
+	width:$width;
+	height:$height;
+	background-color: $bgc;
+}
+@mixin fonts($size,$color,$lih,$aling: left){
+	font-size: $size;
+	color: $color;
+	text-align: $aling;
+	line-height: $lih;
+}
+@mixin bord-st($width,$radu,$color){
+	border:{
+		color:$color;
+		width: $width;
+		style: solid;
+		radius: $radu;
+	}
+}
