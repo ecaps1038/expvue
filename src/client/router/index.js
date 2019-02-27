@@ -5,6 +5,7 @@ import Router from 'vue-router'
 import store from './../store/store'
 
 // 导入相应的子组件
+import Home from './../components/Home'
 import Hello from './../components/Hello'
 import Test from './../components/test'
 
@@ -13,12 +14,20 @@ Vue.use(Router)
 var router = new Router({
   mode: 'history',
   routes: [
-    { name: 'hello', path: '/hello', component: Hello },
-    { name: 'test', path: '/test', component: Test },
+    { 
+      name: 'home', path: '/', component: Home,
+      children:[{
+      path:'test',
+      component:Test
+    }
+    ]
+    },
+    // { name: 'hello', path: '/hello', component: Hello },
+    // { name: 'test', path: '/test', component: Test },
     {
     	//重定向，打开页面时显示
 		path:'*',
-		redirect:'/hello'
+		redirect:'/test'
 	},
   ]
 })
