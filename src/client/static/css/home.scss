@@ -1,0 +1,39 @@
+
+@import "../static/css/common.scss";
+.header{
+	@include w-h(100%,80px,#1c1c21,block);
+	@include positions(fixed,0px,0px);
+	text-align: center;
+	.logo{
+		@include positions(absolute,24px,40px);
+		a{
+			@include w-h(72px,32px,#1c1c21);
+		}
+	}
+	.nav{
+		display: inline;
+		a{
+			display: inline-block;
+			position: relative;
+			width: 76px;
+			@include fonts(14px,rgba(255,255,255,0.5),80px,center);
+			&:hover{
+				color: #fff;
+				background: #232329;
+			}
+		}
+		.router-link-active{
+			color: #fff;
+			i{
+				@include positions(absolute,58px,31px);
+				@include w-h(16px,2px,#fff);
+			}
+		}
+	}
+	.user{
+
+		@include positions(absolute,20px,auto,40px,auto);
+		@include w-h(40px,40px,#232329);
+		border-radius: 50%;
+	}
+}

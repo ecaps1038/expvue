@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     <h1>{{ msg }}</h1>
      <!-- <router-link to="/">Goto App</router-link> -->
      <router-link to="/test">Goto Test</router-link>
@@ -10,3 +10,4 @@
 <style lang="scss">
   @import "../static/css/hello.scss";
 </style>
+

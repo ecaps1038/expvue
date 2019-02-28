@@ -1,7 +1,8 @@
-@mixin w-h($width,$height,$bgc: #fff){
+@mixin w-h($width,$height,$bgc: #fff,$dis: inline-block){
 	width:$width;
 	height:$height;
 	background-color: $bgc;
+	display: $dis;
 }
 @mixin fonts($size,$color,$lih,$aling: left){
 	font-size: $size;
@@ -16,4 +17,11 @@
 		style: solid;
 		radius: $radu;
 	}
+}
+@mixin positions($mod,$top,$left,$right: auto,$bottom: auto){
+	position: $mod;
+	top: $top;
+	left: $left;
+	right: $right;
+	bottom: $bottom;
 }

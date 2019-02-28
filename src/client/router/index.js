@@ -12,24 +12,22 @@ import Test from './../components/test'
 Vue.use(Router)
 
 var router = new Router({
-  mode: 'history',
-  routes: [
-    { 
-      name: 'home', path: '/', component: Home,
-      children:[{
-      path:'test',
-      component:Test
-    }
+    mode: 'history',
+    routes: [
+        { 
+            name: 'home', path: '/', redirect:'/test', component: Home,
+            children:[{
+                path:'test',
+                component:Test
+                },
+                {
+                    path: 'hello',
+                    component: Hello
+                }
+            ]
+        },
+        //{ name: 'hello', path: '/hello', component: Hello },
     ]
-    },
-    // { name: 'hello', path: '/hello', component: Hello },
-    // { name: 'test', path: '/test', component: Test },
-    {
-    	//重定向，打开页面时显示
-		path:'*',
-		redirect:'/test'
-	},
-  ]
 })
 
 export default router
