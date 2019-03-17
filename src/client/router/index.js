@@ -5,9 +5,9 @@ import Router from 'vue-router'
 import store from './../store/store'
 
 // 导入相应的子组件
-import Home from './../components/Home'
+import Nav from './../components/Nav'
 import Hello from './../components/Hello'
-import Test from './../components/test'
+import Yike from './../components/Home'
 
 Vue.use(Router)
 
@@ -15,10 +15,11 @@ var router = new Router({
     mode: 'history',
     routes: [
         { 
-            name: 'home', path: '/', redirect:'/test', component: Home,
-            children:[{
-                path:'test',
-                component:Test
+            name: 'nav', path: '/', redirect:'/home', component: Nav,
+            children:[
+                {
+                    path:'home',
+                    component:Yike
                 },
                 {
                     path: 'hello',

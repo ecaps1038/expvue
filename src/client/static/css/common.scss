@@ -4,6 +4,10 @@
 	background-color: $bgc;
 	display: $dis;
 }
+@mixin w-h-n($width,$height){
+	width: $width;
+	height: $height;
+}
 @mixin fonts($size,$color,$lih,$aling: left){
 	font-size: $size;
 	color: $color;
@@ -25,3 +29,6 @@
 	right: $right;
 	bottom: $bottom;
 }
+
+
+$h1: 80px;
