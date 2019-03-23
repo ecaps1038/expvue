@@ -13,6 +13,8 @@ import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 
 import config from '../../build/webpack.dev.conf'
+//添加凭证文件
+var credentials = require('./config/credentials');
 
 
 const app = express()
@@ -40,6 +42,15 @@ app.use(express.static(path.join(__dirname, 'views')))
 app.get('/', function (req, res) {
   res.sendFile('./views/index.html');
 })
+
+//添加cookie中间件和session
+app.use(require('cookie-parser')(credentials.cookieSecret));
+app.use(require('express-session')({
+  name: 'yike',
+  secret: 'abdef',
+  resave: true,
+  //cookie: {maxAge:60*1000,httpOnly:true}
+}));
 
 //引入后台路由
 require('./router/index.js')(app);

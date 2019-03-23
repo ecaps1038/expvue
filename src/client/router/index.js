@@ -10,6 +10,9 @@ import Hello from './../components/Hello'
 import Yike from './../components/Home'
 import Works from './../components/Works'
 
+//后台页面
+import login from './../components/admin/login'
+
 Vue.use(Router)
 
 var router = new Router({
@@ -28,7 +31,7 @@ var router = new Router({
                 }
             ]
         },
-        { name: 'hello', path: '/hello', component: Hello },
+        { name: 'login', path: '/login', component: login },
     ]
 })
 
