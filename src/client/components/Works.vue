@@ -1,11 +1,5 @@
 <template>
   <div class="main">
-  	<div class="banner" :style="note">
-  		<div class="bn-iner">
-  			<p class="title" :style="suiy"></p>
-  			<p class="some" v-html="msg"></p>
-  		</div>
-  	</div>
     <div class="content">
         <ul>
             <li v-for="html in htmls">

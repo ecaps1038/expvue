@@ -8,11 +8,12 @@
 	width: $width;
 	height: $height;
 }
-@mixin fonts($size,$color,$lih,$aling: left){
+@mixin fonts($size,$color,$lih,$aling: left,$weight: normal){
 	font-size: $size;
 	color: $color;
 	text-align: $aling;
 	line-height: $lih;
+	font-weight: $weight;
 }
 @mixin bord-st($width,$radu,$color){
 	border:{
@@ -29,6 +30,5 @@
 	right: $right;
 	bottom: $bottom;
 }
-
 
 $h1: 80px;

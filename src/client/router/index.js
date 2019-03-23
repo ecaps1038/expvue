@@ -8,6 +8,7 @@ import store from './../store/store'
 import Nav from './../components/Nav'
 import Hello from './../components/Hello'
 import Yike from './../components/Home'
+import Works from './../components/Works'
 
 Vue.use(Router)
 
@@ -22,12 +23,12 @@ var router = new Router({
                     component:Yike
                 },
                 {
-                    path: 'hello',
-                    component: Hello
+                    path: 'works',
+                    component: Works
                 }
             ]
         },
-        //{ name: 'hello', path: '/hello', component: Hello },
+        { name: 'hello', path: '/hello', component: Hello },
     ]
 })
 
