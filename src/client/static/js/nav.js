@@ -2,15 +2,14 @@ export default {
 	data () {
 		return {
 		    note: {
-          backgroundImage: "url(" + require("../images/logo1.svg") + ") ",
-          backgroundPosition: "center center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
+			backgroundImage: "url(" + require("../images/logo1.svg") + ") ",
+			backgroundPosition: "center center",
+			backgroundRepeat: "no-repeat",
+			backgroundSize: "cover",
         },
-		  // with hot-reload because the reloaded component
-		  // preserves its current state and we are modifying
-		  // its initial state.
-		  msg: 'Hello World!'
+			id: '',
+			name: '',
+			imgurl: '',	
 		}
 	},
     computed:{
@@ -32,7 +31,21 @@ export default {
 			    console.log(error);
 			    alert('aa')
 			});
-		}
-	}
+		},
+		login: function(){
+        	var _this = this;
+        	_this.$axios.get('/login',{})
+        	.then(function (response) {
+				var data = response.data;
+			    //_this.name = data.myname;
+			    alert(data.myname)
+			})
+			.catch(function (error) {
+			    console.log(error);
+			    alert('aa')
+			});
+        }
+	},
+	mounted:function(){this.login();},
 
 }

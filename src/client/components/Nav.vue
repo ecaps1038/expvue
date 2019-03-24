@@ -11,7 +11,8 @@
 				<router-link to="/diary">随记<i></i></router-link>
 				<router-link to="/about">关于</router-link>
 			</div>
-			<div class="user"><i></i></div>
+			<div class="user"></div>
+			<p>{{name}}</p>
 		</div>
 		<router-view></router-view>
 		<footer>

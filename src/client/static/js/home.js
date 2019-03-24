@@ -45,9 +45,7 @@ export default {
 				backgroundSize: "cover",
 	        },
 			msg: '溶于世，却恋那山石。<br/>世上太多美好，却折磨着选择。<br/>如果不能选择，那就自己创造一块境地。<br/>依旧恋那山石。为此汇记纯粹的自己。',
-			htmls: [],
-			photo: require('../images/sql/4.png'),
-			img: ''
+			htmls: []
 		}
 	},
     computed:{
@@ -70,6 +68,7 @@ export default {
 			    alert('aa')
 			});
 		},
+		//初始化
         imgs:function(){
         this.htmls = arr;
         }

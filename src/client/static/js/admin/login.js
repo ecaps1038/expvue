@@ -1,8 +1,11 @@
+//加入跳转页面的位置
+import Router from '../../../router/index'
 export default {
 	data () {
 		return {
 		  name: '',
-		  psw: ''
+		  psw: '',
+		  returns: ''
 		}
 	},
     computed:{
@@ -10,23 +13,26 @@ export default {
 	},
 	methods:{
 		submit: function(){
-			if(this.name && this.psw){
-				this.$axios.post('/login', {
-				    name: this.name,
-				    psw: this.psw
+			var _this = this;
+			if(_this.name && _this.psw){
+				_this.$axios.post('/login', {
+				    name: _this.name,
+				    psw: _this.psw
 				})
 				.then(function (response) {
 					var tep = response.data.tep;
 				    if(tep == 0){
-						alert('tep=0');
+				    	//匹配成功
+						//alert('tep=0');
+						Router.push({path: '/'})
 					}else if(tep == 1){
-						alert('tep == 1');
+						//匹配不成功
+						_this.returns = response.data.return;
 					}
-				    //console.log(data);
 				})
 				.catch(function (error) {
 				    console.log(error);
-				    alert('aa')
+				    alert(error)
 				});
 			}
 		}
