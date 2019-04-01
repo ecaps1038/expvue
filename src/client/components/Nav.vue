@@ -1,7 +1,5 @@
 <template>
     <div>
-    	
-		<!-- <router-link to="/">Goto App</router-link> -->
 		<div class="header">
 			<div class="logo"><router-link to="/home" :style="note"></router-link></div>
 			<div class="nav">
@@ -11,12 +9,16 @@
 				<router-link to="/diary">随记<i></i></router-link>
 				<router-link to="/about">关于</router-link>
 			</div>
-			<div class="user"></div>
-			<p>{{name}}</p>
+			<div class="user">
+				<div class="user-inner"  v-html="user"></div>
+				<p class="quit" v-on:click="quit">{{sub}}</p>
+			</div>
 		</div>
 		<router-view></router-view>
 		<footer>
-				<div> hhhhhhh </div>
+				<div>
+					
+				</div>
 		</footer>
     </div>
 </template>

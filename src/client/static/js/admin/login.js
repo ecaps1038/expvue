@@ -27,6 +27,7 @@ export default {
 						Router.push({path: '/'})
 					}else if(tep == 1){
 						//匹配不成功
+						_this.psw = '';
 						_this.returns = response.data.return;
 					}
 				})

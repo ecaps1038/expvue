@@ -11,3 +11,6 @@ cnpm install cookie-parser --save     //cookie
 cnpm install mongoose --save          //mongodb
 cnpm install bcryptjs --save          //加密
 cnpm install express-session --save   //session
+
+
+export PATH=/usr/local/mongodb/bin:$PATH

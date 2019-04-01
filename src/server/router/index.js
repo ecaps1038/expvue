@@ -9,12 +9,14 @@ module.exports = function(app){
 		var context = {from,to};
 		res.send({success:true,context});
 	});	
+	//用户登陆
 	app.post('/login',function(req,res){
 		var email = req.body.name;
 		var pswd = req.body.psw;
 		login.logIn(email,pswd,req,res);
 		// res.send({success:true,context});
 	});
+	//首页验证
 	app.get('/login',function(req,res){
 		if(req.signedCookies.id){
 			req.session.userId = req.signedCookies.id;
@@ -33,4 +35,19 @@ module.exports = function(app){
 			//res.redirect('/');
 		}
 	});
+	//用户退出
+	app.get('/quit', function(req,res) {
+        login.logout(req,res);
+	});	
+	//用户管理权限
+	app.get('/manage', function(req,res) {
+		if(req.session.userId){
+			var myimgurl = req.session.imgurl;
+			var myname = req.session.username;
+			res.send({success:true,tep:1,myname:myname,myimgurl:myimgurl});
+		}else{
+			res.send({success:true,tep:0});
+		}
+	});	
+
 }

@@ -1,5 +1,5 @@
 
-@import "../static/css/common.scss";
+@import "./common.scss";
 .header{
 	@include w-h(100%,80px,#1c1c21,block);
 	@include positions(fixed,0px,0px);
@@ -34,8 +34,31 @@
 	.user{
 
 		@include positions(absolute,20px,auto,40px,auto);
-		@include w-h(40px,40px,#232329);
-		border-radius: 50%;
+		width: 40px;
+		.user-inner{
+			@include w-h(40px,40px,#232329);
+			border-radius: 50%;
+			overflow: hidden;
+			//cursor: pointer;
+			img{
+				width: 40px;
+			}		
+		}
+		.quit{
+			// @include w-h(40px,28px,#3b3c41);
+			background: #3b3c41;
+			border-radius: 5px;
+			@include fonts(14px,#ff7f26,28px,center);
+			display: none;
+			cursor: pointer;
+			opacity: 0.5;
+			&:hover{
+				opacity: 1;
+			}
+		}
+		&:hover .quit{
+			display: block;
+		}
 	}
 }
 .main{

@@ -8,10 +8,12 @@ import store from './../store/store'
 import Nav from './../components/Nav'
 import Hello from './../components/Hello'
 import Yike from './../components/Home'
-import Works from './../components/Works'
+//import Works from './../components/Works'
 
 //后台页面
 import login from './../components/admin/login'
+import manage from './../components/admin/manage'
+import total from './../components/admin/total'
 
 Vue.use(Router)
 
@@ -27,11 +29,24 @@ var router = new Router({
                 },
                 {
                     path: 'works',
-                    component: Works
+                    component: Hello
                 }
             ]
         },
         { name: 'login', path: '/login', component: login },
+        { 
+            name: 'manage', path: '/manage', redirect:'/manage/total', component: manage,
+            children:[
+                {
+                    path:'total',
+                    component:total
+                },
+                {
+                    path: 'works',
+                    component: Hello
+                }
+            ]
+        },
     ]
 })
 

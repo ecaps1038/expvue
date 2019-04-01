@@ -9,7 +9,9 @@ export default {
         },
 			id: '',
 			name: '',
-			imgurl: '',	
+			img: '',	
+			sub: '',
+			user: '',
 		}
 	},
     computed:{
@@ -37,12 +39,25 @@ export default {
         	_this.$axios.get('/login',{})
         	.then(function (response) {
 				var data = response.data;
-			    //_this.name = data.myname;
-			    alert(data.myname)
+			    _this.user = '<a href="manage"><img src="http://localhost:8080/vacation-photo/'+data.myimgurl+'"></a>';
+			    _this.sub = '退出';
 			})
 			.catch(function (error) {
 			    console.log(error);
 			    alert('aa')
+			});
+        },
+        quit: function(){
+        	var _this = this;
+        	_this.$axios.get('/quit',{})
+        	.then(function (response) {
+				var data = response.data;
+			    _this.user = '';
+			    _this.sub = '';
+			})
+			.catch(function (error) {
+			    console.log(error);
+			    alert('请求失败')
 			});
         }
 	},

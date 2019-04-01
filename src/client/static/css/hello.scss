@@ -1,8 +1,5 @@
 
 @import "../static/css/common.scss";
-.main{
-	padding-top: 80px;
-}
 .aaa{
 	@include w-h(120px,60px,#00aaee);
 	@include fonts(24px,#fff,60px,center);

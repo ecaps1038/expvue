@@ -1,6 +1,7 @@
 var User = require("../dao/userdb.js");
 var bcrypt = require('bcryptjs');
 
+//登陆
 exports.logIn = function(data,pwd,req,res){
     var wherestr = {$or:[{'email': data},{'name': data}]};
     var out = {'name':1,'pwd':1,'email':1,'online':1,'imgurl':1};
@@ -34,4 +35,11 @@ exports.logIn = function(data,pwd,req,res){
             })
         }
     })
+};
+
+//退出
+exports.logout = function(req,res){
+    var id = req.session.userId;
+    delete req.session.userId;
+    res.send({success:true});
 };
