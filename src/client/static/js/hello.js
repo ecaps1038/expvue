@@ -36,7 +36,9 @@ export default {
 			.then(function (response) {
 				var data = response.data.context.vacation;
 			    //console.log(response);
-			    data[0].img = 'http://127.0.0.1:8080/vacation-photo/'+data[0].img
+			    for(var i = 0;i<data.length;i++){
+				    data[i].img = 'http://127.0.0.1:8080/vacation-photo/'+data[i].img
+				}
 			    _this.arr = data;
 			    console.log(data);
 			})
