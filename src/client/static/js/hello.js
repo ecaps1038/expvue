@@ -5,7 +5,8 @@ export default {
 		  // with hot-reload because the reloaded component
 		  // preserves its current state and we are modifying
 		  // its initial state.
-		  msg: 'Hello World!'
+		  msg: 'Hello World!',
+		  arr: [],
 		}
 	},
     computed:{
@@ -22,6 +23,22 @@ export default {
 				var data = response.data.context.from;
 			    //console.log(response);
 			    console.log(data)
+			})
+			.catch(function (error) {
+			    console.log(error);
+			    alert('aa')
+			});
+		},
+		testout: function(){
+			var _this= this;
+			_this.$axios.post('http://127.0.0.1:8080/test', {
+			})
+			.then(function (response) {
+				var data = response.data.context.vacation;
+			    //console.log(response);
+			    data[0].img = 'http://127.0.0.1:8080/vacation-photo/'+data[0].img
+			    _this.arr = data;
+			    console.log(data);
 			})
 			.catch(function (error) {
 			    console.log(error);

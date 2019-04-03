@@ -31,7 +31,7 @@ export default {
 			})
 			.catch(function (error) {
 			    console.log(error);
-			    alert('aa')
+			    //alert('aa')
 			});
 		},
 		login: function(){
@@ -44,7 +44,7 @@ export default {
 			})
 			.catch(function (error) {
 			    console.log(error);
-			    alert('aa')
+			    //alert('aa')
 			});
         },
         quit: function(){
