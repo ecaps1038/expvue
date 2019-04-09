@@ -32,10 +32,9 @@
 					</svg>
 	    		</div>
 	    	</div>
-	    	<p>{{aa}}</p>
-	        <div>
-	        	<router-view class="manage-main"></router-view>
-	        </div>
+	    	<div class="manage-view">
+		        <router-view class="manage-main"></router-view>
+		    </div>
 		</div>
     </div>
 </template>

@@ -60,7 +60,7 @@ export default {
 				if(tep == 0){
 					Router.push({path: '/'});
 				}else if(tep == 1){
-					_this.imgurl = 'http://localhost:8080/vacation-photo/'+data.myimgurl;
+					_this.imgurl = 'http://127.0.0.1:8080/vacation-photo/'+data.myimgurl;
 					_this.name = data.myname;
 				}
 			})
@@ -70,6 +70,7 @@ export default {
 			    Router.push({path: '/'});
 			});
 		},
+		//内容切换标题
 		selected: function(index){
 			var _this = this;
 			_this.icon = _this.navs[index].icon;

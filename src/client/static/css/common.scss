@@ -32,6 +32,7 @@
 }
 
 $h1: 80px;
+$mh: 600px;
 
 
 
@@ -40,4 +41,8 @@ $h1: 80px;
 	color: #333;
 	font-size: 14px;
 	font-family: sans-serif;
+}
+ul,li{
+	list-style: none;
+	float: left;
 }

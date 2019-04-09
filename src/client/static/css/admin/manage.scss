@@ -74,9 +74,12 @@
 	}
 }
 .manage-right{
-	padding-left: 200px;
+	padding-left: 200px;	
 	.to-bar{
+		@include positions(fixed,0px,0px);
+		z-index: 1000;
 		@include w-h(100%,64px,#fff);
+		padding-left: 200px;
 		box-shadow: 0 1px 6px rgba(0,0,0,0.1);
 		.left{
 			float: left;
@@ -106,4 +109,12 @@
 			}
 		}
 	}
+	.manage-view{
+		padding: 88px 24px 24px 24px;
+		.manage-main{
+			min-height: $mh;
+		}
+
+	}
 }
+
